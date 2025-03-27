@@ -11,6 +11,7 @@ from sentence_transformers import SentenceTransformer
 app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 
+#trigger workflow
 
 # === Global Initialization for RAG System ===
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "pcsk_7KFdTT_UcAb7xSngLidVECR5kKAdQmQ4xQeUfXQSGPbjhmXQgM9GqWAjCHNN36qigcaSWZ")
