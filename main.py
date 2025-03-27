@@ -11,6 +11,7 @@ from sentence_transformers import SentenceTransformer
 app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 
+
 # === Global Initialization for RAG System ===
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "pcsk_7KFdTT_UcAb7xSngLidVECR5kKAdQmQ4xQeUfXQSGPbjhmXQgM9GqWAjCHNN36qigcaSWZ")
 PINECONE_ENVIRONMENT = os.environ.get("PINECONE_ENVIRONMENT", "us-east-1")
@@ -51,7 +52,7 @@ def query_gemini(query: str, context: str) -> str:
             {
                 "parts": [
                     {
-                        "text": f"Give an overall answer for the following context:\n{context}\n\nUser Question: {query}"
+                        "text": f"Give an overall answer for the following context:\n{context}\n\nUser Question: {query}. if there is not context in the document written 'No answer found'"
                     }
                 ]
             }
